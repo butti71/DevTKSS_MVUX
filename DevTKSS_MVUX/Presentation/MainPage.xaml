@@ -19,7 +19,7 @@
                   HorizontalAlignment="Center"
                   VerticalAlignment="Bottom"
                   Spacing="16">
-        <mvux:FeedView Source="{Binding TableItems}"
+        <mvux:FeedView Source="{Binding TabItems}"
                        Padding="3">
           <mvux:FeedView.ValueTemplate>
             <DataTemplate>

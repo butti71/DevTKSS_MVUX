@@ -1,7 +1,7 @@
 
 MVUX example for populating TabBar:
 
-  public IListState<string> TableItems => ListFeed
+public IListState<string> TabItems => ListFeed
              .Async(
                     static async (ct) =>
                     {
@@ -15,6 +15,7 @@ MVUX example for populating TabBar:
                             "XAML DataTemplate"
                         });
                     })
-                    .Selection(SelectedTableItems);
+                    .Selection(SelectedTabItem);
+    public IState<string> SelectedTabItem => State<string>.Empty(this);
 
 ![image](https://github.com/user-attachments/assets/62055c26-5ef9-42a5-9349-528573ddddaf)

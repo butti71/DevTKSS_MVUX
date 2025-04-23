@@ -15,7 +15,7 @@ public partial record MainModel
         Title += $" - {appInfo?.Value?.Environment}";
     }
 
-    public IListState<string> TableItems => ListFeed
+    public IListState<string> TabItems => ListFeed
              .Async(
                     static async (ct) =>
                     {
@@ -29,8 +29,8 @@ public partial record MainModel
                             "XAML DataTemplate"
                         });
                     })
-                    .Selection(SelectedTableItems);
-    public IState<IImmutableList<string>> SelectedTableItems => State<IImmutableList<string>>.Empty(this);
+                    .Selection(SelectedTabItem);
+    public IState<string> SelectedTabItem => State<string>.Empty(this);
 
 
     public string? Title { get; }
