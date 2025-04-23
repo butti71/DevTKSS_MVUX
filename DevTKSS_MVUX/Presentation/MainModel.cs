@@ -15,25 +15,30 @@ public partial record MainModel
         Title += $" - {appInfo?.Value?.Environment}";
     }
 
-    public IListState<string> TabItems => ListFeed
-             .Async(
-                    static async (ct) =>
-                    {
-                        return ImmutableList<string>.Empty.AddRange(new[]
-                        {
-                            "FeedView + GridView XAML",
-                            "C# in Model",
-                            "DI Service Resw",
-                            "DI Service without Resw",
-                            "C# Record",
-                            "XAML DataTemplate"
-                        });
-                    })
-                    .Selection(SelectedTabItem);
-    public IState<string> SelectedTabItem => State<string>.Empty(this);
+    public IListState<KeyValuePair<string, string>> TabItems => ListFeed
+       .Async(
+           static async (ct) =>
+           {
+               return ImmutableList<KeyValuePair<string, string>>.Empty.AddRange(new Dictionary<string, string>
+               {
+                    { "Tab1", "FeedView + GridView XAML" },
+                    { "Tab2", "C# in Model" },
+                    { "Tab3", "DI Service Resw" },
+                    { "Tab4", "DI Service without Resw" },
+                    { "Tab5", "C# Record" },
+                    { "Tab6", "XAML DataTemplate" }
+               });
+           })
+           .Selection(SelectedTabItem);
 
+    public IState<KeyValuePair<string, string>> SelectedTabItem => State<KeyValuePair<string, string>>.Empty(this);
 
+    public async Task Command(object sender)
+    {
+        await Name.UpdateAsync(_ => sender.ToString() ?? string.Empty);
+    }
     public string? Title { get; }
+
 
     public IState<string> Name => State<string>.Value(this, () => string.Empty);
 
