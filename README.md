@@ -19,4 +19,5 @@ public IListState<KeyValuePair<string, string>> TabItems => ListFeed
 
     public IState<KeyValuePair<string, string>> SelectedTabItem => State<KeyValuePair<string, string>>.Empty(this);
 ```
-![image](https://github.com/user-attachments/assets/62055c26-5ef9-42a5-9349-528573ddddaf)
+![image](https://github.com/user-attachments/assets/23fe1dfa-858a-4c45-ae26-b1a4655a473d)
+
