@@ -1,6 +1,6 @@
 
-MVUX example for populating TabBar:
-
+MVUX example for populate TabBar:
+```
   public IListState<string> TableItems => ListFeed
              .Async(
                     static async (ct) =>
@@ -16,5 +16,5 @@ MVUX example for populating TabBar:
                         });
                     })
                     .Selection(SelectedTableItems);
-
+```
 ![image](https://github.com/user-attachments/assets/62055c26-5ef9-42a5-9349-528573ddddaf)
