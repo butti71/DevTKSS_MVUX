@@ -19,25 +19,18 @@ public partial record MainModel
              .Async(
                     static async (ct) =>
                     {
-                        //var result = await new;
-                        //_logger.LogInformation($"After lookup API call, result is {result.Data.Select(o => o.Name)}");
-
                         return ImmutableList<string>.Empty.AddRange(new[]
                         {
                             "FeedView + GridView XAML",
-                                    "C# in Model",
-                                    "DI Service Resw",
-                                    "DI Service without Resw",
-                                    "C# Record",
-                                    "XAML DataTemplate"
+                            "C# in Model",
+                            "DI Service Resw",
+                            "DI Service without Resw",
+                            "C# Record",
+                            "XAML DataTemplate"
                         });
                     })
                     .Selection(SelectedTableItems);
-
-    //public IState<DBTable> SelectedTableItem => State.Value(this, () => new DBTable());
-    //public IState<DBTable> NewTableItem => State.Value(this, () => new DBTable());
     public IState<IImmutableList<string>> SelectedTableItems => State<IImmutableList<string>>.Empty(this);
-
 
 
     public string? Title { get; }
