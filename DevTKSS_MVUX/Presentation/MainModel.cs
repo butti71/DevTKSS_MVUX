@@ -15,7 +15,7 @@ public partial record MainModel
         Title += $" - {appInfo?.Value?.Environment}";
     }
 
-    public IListState<KeyValuePair<string, string>> TabItems => ListFeed
+    public IListFeed<KeyValuePair<string, string>> TabItems => ListFeed
        .Async(
            static async (ct) =>
            {
