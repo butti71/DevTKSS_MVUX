@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "DevTKSS_MVUX",
+  "display": "standalone",
+  "name": "DevTKSS_MVUX",
+  "short_name": "DevTKSS_MVUX",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
